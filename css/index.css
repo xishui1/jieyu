@@ -90,6 +90,10 @@ input.form-control:focus, input.form-control:hover, textarea.form-control:focus,
   line-height: 1.05556rem;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 .header {
   position: relative;
   background: #fff;
