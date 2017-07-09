@@ -49,7 +49,7 @@ iframe {
 
 .page-list .pre:after, .page-list .next:after, .pro-view .pro-viewl-indicators .left:after, .pro-view .pro-viewl-indicators .right:after, .s-artice .t-sub .icon-view {
   background: url(../images/common.svg);
-  background-size: 100px 100px;
+  background-size: 1.85185rem 1.85185rem;
 }
 
 @font-face {
