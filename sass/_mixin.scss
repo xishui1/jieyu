@@ -1,0 +1,25 @@
+$px:1px;
+// $px:1rem*1/54;
+@mixin clearfix() {
+  &::after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+}
+@mixin keep-all(){
+ 
+    word-break: keep-all;
+    white-space: nowrap;
+}
+@mixin nowrap($textoverflow:ellipsis) {
+ @include keep-all(); 
+  overflow: hidden;
+  text-overflow: $textoverflow;
+
+}
+%commonbg{
+
+       background: url(../images/common.svg);
+       background-size: 100*$px 100*$px;
+}
