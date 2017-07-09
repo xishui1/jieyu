@@ -2202,6 +2202,10 @@ input.form-control:focus, input.form-control:hover, textarea.form-control:focus,
   .pro-view .pro-thumb .img-wap + .img-wap {
     margin-left: 0.09259rem;
   }
+
+  .footer .sm-inf {
+    margin-left: 0.37037rem;
+  }
 }
 @media (max-width: 576px) {
   .col-sm-4 {

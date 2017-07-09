@@ -1119,7 +1119,7 @@ input.form-control,textarea.form-control {
         min-height: 300*$px;
     }
     .footer .sm-inf {
-        display: block;
+        display:  block;
     }
     .pro-list-item {
         height:287*$px;
@@ -2180,6 +2180,9 @@ input.form-control,textarea.form-control {
                 margin-left:5*$px;
             }
         }
+    }
+    .footer .sm-inf{
+        margin-left:20*$px; 
     }
    
 }
