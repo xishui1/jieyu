@@ -80,6 +80,7 @@ html{
         &.collapsed .navbar-toggler-icon {
             position: absolute;
             background: #000;
+            left:0;
             transition: all .5s cubic-bezier(.23, 1, .38, 1) 0;
             &:before, &:after {
                 transition: all .5s cubic-bezier(.23, 1, .38, 1) 0;

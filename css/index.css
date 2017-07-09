@@ -126,6 +126,7 @@ html {
 .header .navbar-toggler.collapsed .navbar-toggler-icon {
   position: absolute;
   background: #000;
+  left: 0;
   transition: all 0.5s cubic-bezier(0.23, 1, 0.38, 1) 0;
 }
 .header .navbar-toggler.collapsed .navbar-toggler-icon:before, .header .navbar-toggler.collapsed .navbar-toggler-icon:after {
