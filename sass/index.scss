@@ -2042,6 +2042,9 @@ html{
             top: 80*$px;
         }
     }
+    .navbar-nav{
+        margin-top:0;
+    }
     .navbar-collapse {
         position: fixed;
         left: 0;
