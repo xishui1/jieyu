@@ -1,5 +1,5 @@
-$px:1px;
-$px:1rem*1/54;
+
+$px:1rem*1/54 !default;
 @mixin clearfix() {
   &::after {
     display: block;
@@ -22,4 +22,11 @@ $px:1rem*1/54;
 
        background: url(../images/common.svg);
        background-size: 100*$px 100*$px;
+}
+@mixin hz($attr,$value){ 
+   #{$attr}:$value;
+  -ms-#{$attr}:$value;   
+  -moz-#{$attr}:$value;  
+  -webkit-#{$attr}:$value;  
+  -o-#{$attr}:$value; 
 }

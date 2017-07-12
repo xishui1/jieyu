@@ -1,6 +1,11 @@
 @import'common';
-@import'mixin';
+@import'mixin' ;  
+@import 'compass/css3';
 $theme:#406cbd;
+body{
+        min-height:100%;
+        height:auto;
+}
 @font-face {
     font-family: 'HELVETICANEUELTPRO-THEX';
     src: url('../fonts/HELVETICANEUELTPRO-THEX.OTF');
@@ -65,14 +70,16 @@ html{
         position: absolute;
         z-index: 9999; 
         border: none;
-        padding: 0 20*$px;
+        
         vertical-align: top;
         cursor: pointer;
         width: 32*$px;
         height: 32*$px;
         right: 20*$px;
-        top: 24*$px;
+        top:0;
+        padding:24*$px 10*$px; 
         margin:0;
+        box-sizing:content-box;
         &:hover, &:focus, &:active {
             outline: none;
             border: none;
@@ -80,18 +87,18 @@ html{
         &.collapsed .navbar-toggler-icon {
             position: absolute;
             background: #000;
-            left:0;
-            transition: all .5s cubic-bezier(.23, 1, .38, 1) 0;
+            left:10px;
+            @include  transition (all .5s cubic-bezier(.23, 1, .38, 1) 0);
             &:before, &:after {
-                transition: all .5s cubic-bezier(.23, 1, .38, 1) 0;
+               @include transition(all .5s cubic-bezier(.23, 1, .38, 1) 0);
             }
             &:before {
                 background: #000;
-                transform: translate3D(0, 0, 0) rotate(0);
+                 @include transform(translate3D(0, 0, 0) rotate(0));
             }
             &:after {
                 background: #000;
-                transform: translate3D(0, 0, 0) rotate(0);
+                 @include  transform(translate3D(0, 0, 0) rotate(0));
             }
         }
         .navbar-toggler-icon {
@@ -101,7 +108,7 @@ html{
             height: 2*$px;
             display: block;
             background: transparent;
-            transition: background 1s cubic-bezier(.23, 1, .38, 1) .5s;
+             @include transition(background 1s cubic-bezier(.23, 1, .38, 1) .5s);
             &:before, &:after {
                 position: absolute;
                 content: "";
@@ -109,15 +116,15 @@ html{
                 height: 2*$px;
                 width: 32*$px;
                 background: #90939e;
-                transition: all 1s cubic-bezier(.23, 1, .38, 1) .5s;
+                 @include  transition(all 1s cubic-bezier(.23, 1, .38, 1) .5s);
             }
             &:before {
                 top: -15*$px;
-                transform: translate3D(0, 15*$px, 0) rotate(45deg);
+                 @include  transform( translate3D(0, 15*$px, 0) rotate(45deg));
             }
             &:after {
                 bottom: -15*$px;
-                transform: translate3D(0, -15*$px, 0) rotate(-45deg);
+                 @include transform (translate3D(0, -15*$px, 0) rotate(-45deg));
             }
         }
     }
@@ -132,7 +139,7 @@ html{
     width: 430*$px;
     height: 80*$px;
     padding:0;
-    margin-right:80*$px;
+    margin-right:30*$px;
     background-size: 430*$px 52*$px;
 }
 .navbar-toggleable-md .navbar-collapse {
@@ -143,12 +150,12 @@ html{
         color: #333;
         padding: 0 10*$px;
         line-height: 80*$px;
-        min-width: 105*$px;
+        min-width: 100*$px;
         text-align: center;
     }
     .nav-item {
         position: relative;
-        margin: 0 10*$px; 
+        margin: 0 5*$px; 
         &.active, &:hover {
             background: transparent;
             .nav-link {
@@ -299,7 +306,7 @@ html{
             height: 21*$px;
             // background: url(../images/common.png) no-repeat;
             // background-size: 52*$px 255*$px;
-            // background-position: 0 -26*$px;
+            // backgrou nd-position: 0 -26*$px;
             color: #fff;
             background: url(data:image/svg+xml;base64,PHN2ZyBpZD0i5Zu+5bGCXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjMwIiBoZWlnaHQ9IjMwIiB2aWV3Qm94PSIwIDAgMzAgMzAiPjxzdHlsZT4uc3Qwe2ZpbGwtcnVsZTpldmVub2RkO2NsaXAtcnVsZTpldmVub2RkO2ZpbGw6I2ZmZjt9PC9zdHlsZT48cGF0aCBjbGFzcz0ic3QwIiBkPSJNMjkuNSAyOS41Yy0uNi42LTEuNi42LTIuMiAwTDIwIDIyLjJjLTQuOSAzLjgtMTEuOSAzLjQtMTYuNC0xLTQuOS00LjktNC45LTEyLjcgMC0xNy42czEyLjctNC45IDE3LjYgMGM0LjUgNC41IDQuOCAxMS41IDEgMTYuNGw3LjMgNy4zYy43LjcuNyAxLjYgMCAyLjJ6TTE5IDUuOGMtMy42LTMuNi05LjUtMy42LTEzLjIgMHMtMy42IDkuNSAwIDEzLjJjMy42IDMuNiA5LjUgMy42IDEzLjIgMCAzLjYtMy43IDMuNi05LjYgMC0xMy4yeiIvPjwvc3ZnPg==);
             cursor: pointer;
@@ -325,7 +332,7 @@ html{
             width: 48*$px;
             padding: 12*$px 0 0 13*$px;
             &:after {
-                transform: scale(1.1);
+                 @include hz(transform, scale(1.1));
             }
         }
     }
@@ -348,14 +355,21 @@ html{
     text-align: center;
 }
 .carousel-inner {
-    max-height: 500*$px;
+    height: 500*$px;
     overflow: hidden;
     .carousel-item {
+    height: 500*$px;
+        position: relative;
         text-align: center;
         img {
+            display:inline-block;
             height: 100%;
-            min-width: 100%;
-            margin: 0 -9999px;
+            min-width: 100%; 
+            width:auto;
+            max-width:none;
+            position: absolute;
+            left:50%;
+            @include transform(translate3d(-50%,0,0));
         }
     }
     .carousel-item.active, .carousel-item-next, .carousel-item-prev {
@@ -416,15 +430,18 @@ html{
     .img-wap {
         position: relative;
         height: 280*$px;
-        transition: all .1s cubic-bezier(.23, 1, .38, 1) 0s;
+         @include hz(transition, all .1s cubic-bezier(.23, 1, .38, 1) 0s);
         text-align: center;
         overflow: hidden;
         text-align: center;
         img {
+            position: absolute;
+            left:50%; 
+            @include transform(translate3d(-50%,0,0));
             height: 100%;
             width: auto;
             display: inline-block;
-            margin: 0 -9999*$px;
+             
         }
     }
     .pro-list-b {
@@ -433,7 +450,7 @@ html{
         padding: 0 30*$px;
         line-height: 60*$px;
         color: #585858;
-        transition: all .1s cubic-bezier(.23, 1, .38, 1) 0s;
+         @include transition(all .1s cubic-bezier(.23, 1, .38, 1) 0s);
     }
     .btn-view {
         float: right;
@@ -477,13 +494,10 @@ html{
             height: 100%;
             background: $theme;
             z-index: -1;
-            opacity: 0;
-            -webkit-transform: scale3d(0.7, 1, 1);
-            transform: scale3d(0.7, 1, 1);
-            -webkit-transition: -webkit-transform 0.4s, opacity 0.4s;
-            transition: transform 0.4s, opacity 0.4s;
-            -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
-            transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+            opacity: 0; 
+            @include   transform ( scale3d(0.7, 1, 1)); 
+            @include transition(  transform 0.4s, opacity 0.4s); 
+           @include transition-timing-function( cubic-bezier(0.2, 1, 0.3, 1));
         }
         &:hover {
             color: #fff;
@@ -492,8 +506,8 @@ html{
         }
         &:hover::before {
             opacity: 1;
-            -webkit-transform: translate3d(0, 0, 0);
-            transform: scale3d(1, 1, 1);
+           // -webkit-transform: translate3d(0, 0, 0);
+            @include  transform (scale3d(1, 1, 1));
         }
     }
 }
@@ -511,8 +525,8 @@ html{
             overflow: hidden;
             img {
                width: 100%;
-                height: 100%;
-                transition: all .5s cubic-bezier(.23, 1, .38, 1) 0s;
+              height: 100%;
+               @include  transition( all .5s cubic-bezier(.23, 1, .38, 1) 0s);
             }
         }
         .s-list-r {
@@ -570,7 +584,7 @@ html{
         img {
             width: 100%;
             height: 100%;
-            transition: all .5s cubic-bezier(.23, 1, .38, 1) 0s;
+             @include  transition(all .5s cubic-bezier(.23, 1, .38, 1) 0s);
         }
     }
     .s-list-r {
@@ -700,7 +714,8 @@ html{
             color: #000;
             padding-bottom: 17*$px;
             line-height: 1.1;
-            text-align: right;
+            // text-indent: 35*$px;
+            text-align: left;
         }
         p {
             color: #999;
@@ -744,6 +759,7 @@ html{
 .vedio-list {
     padding-bottom: 40*$px;
     margin: 0 -75*$px -80*$px ;
+    overflow: hidden  ;
     .vedio-list-item {
         display:block;
         margin: 0 60*$px 80*$px ;
@@ -758,7 +774,7 @@ html{
                 height: auto;
                 min-width: 100%;
                 min-height: 100%;
-                transition: all ease-out .3s .1s;
+                @include transition(all ease-out .3s .1s);
             }
         }
         .title {
@@ -776,7 +792,7 @@ html{
                 background: #ccc;
                 height: 1px;
                 width: 36*$px;
-                transition: width 1s cubic-bezier(.23, 1, .38, 1) 0s;
+               @include transition(width 1s cubic-bezier(.23, 1, .38, 1) 0s) ;
             }
         }
         .item_mask {
@@ -786,10 +802,9 @@ html{
             top: 0;
             right: 0;
             background: rgba($theme, .8);
-            opacity: 0;
-            -webkit-transform: rotateX(180deg) scale(0.5, 0.5);
-            transform: rotateX(180deg) scale(0.2, 0.2);
-            transition: all ease-out .5s;
+            opacity: 0; 
+            @include transform( rotateX(180deg) scale(0.2, 0.2));
+            @include transition( all ease-out .5s);
         }
         .item_link_icon {
             position: absolute;
@@ -821,8 +836,8 @@ html{
             }
             .item_mask {
                 opacity: 1;
-                transform: rotateX(0deg) scale(1, 1);
-                transition: all 1s cubic-bezier(.23, 1, .38, 1) 0s;
+                @include transform( rotateX(0deg) scale(1, 1));
+               @include  transition (all 1s cubic-bezier(.23, 1, .38, 1) 0s);
             }
         }
     }
@@ -847,12 +862,12 @@ html{
         &.active, &:hover {
             .hover-txt {
                 visibility: visible;
-                transform: rotateX(0deg);
+                 @include transform(rotateX(0deg)) ;
                 z-index: 10;
-                transition: all .5s cubic-bezier(.23, 1, .38, 1) 0s;
+                @include  transition( all .5s cubic-bezier(.23, 1, .38, 1) 0s);
             }
             .icon-online, .icon-tel, .icon-totop {
-                transform: rotateY(180deg);
+                 @include transform(rotateY(180deg));
             }
             .drop-menu {
                 display: block;
@@ -865,13 +880,14 @@ html{
             top: 0;
             right: 0;
             left: 0;
-            bottom: 0;
-            padding: 12*$px;
+            bottom: 0; 
+            text-align: center;
             line-height: 18*$px;
+            padding:12*$px 0*$px;
             visibility: hidden;
-            transform: rotateY(180deg);
+            @include transform(rotateY(180deg)) ;
             background: #fff;
-            transition: all .1s cubic-bezier(.23, 1, .38, 1) 0s;
+            @include transition(all .1s cubic-bezier(.23, 1, .38, 1) 0s) ;
         }
         .icon-online, .icon-tel, .icon-totop {
             width: 28*$px;
@@ -955,11 +971,14 @@ html{
         vertical-align: top;
         margin-left: 80*$px;
         h3 {
-            font-size: 18*$px;
-            color: #fff;
+           a {
+                font-size: 18*$px;
+                color: #fff;
+                @include opacity(1);
+            }
             padding-bottom: 12*$px;
         }
-        a {
+        li a {
             display: block;
             font-size: 14*$px;
             color: #fff;
@@ -1166,7 +1185,10 @@ html{
             display: inline-block;
             height: 100%;
             width: auto;
-            margin: 0 -99999px;
+            // margin: 0 -99999px;
+            position: absolute;
+            left:50%;
+            @include transform(translate3d(-50%,0,0));
         }
     }
 }
@@ -1225,12 +1247,12 @@ html{
             border-right: 1px solid #e6e6e6;
         }
         &:hover {
-            transition: all .1s cubic-bezier(.23, 1, .38, 1) 0s;
+            @include transition(all .1s cubic-bezier(.23, 1, .38, 1) 0s) ;
             box-shadow: 0px 5px 20px 0px rgba(26, 50, 94, 0.4);
             z-index: 2;
             .img-wap img {
-                transform: scale(1.1);
-                transition: all .1s cubic-bezier(.23, 1, .38, 1) 0s;
+                @include transform(scale(1.1)) ;
+                @include transition( all .1s cubic-bezier(.23, 1, .38, 1) 0s) ;
             }
         }
     }
@@ -1240,12 +1262,17 @@ html{
         color: $theme;
     }
     .img-wap {
+        position: relative;
         overflow: hidden;
         margin: 10*$px 0;
         img {
+            top:0;
             padding: 10*$px 0;
             display: inline-block;
-            margin: 0 -9999px;
+            // margin: 0 -9999px;
+            position: absolute;
+            left:50%;
+            @include transform(translate3d(-50%,0,0));
             width: 100%;
             height: auto;
             max-width: 100%;
@@ -1596,13 +1623,11 @@ html{
             bottom: 0;
             background: $theme;
             z-index: -1;
-            opacity: 0;
-            -webkit-transform: scale3d(0.5, 1, 1);
-            transform: scale3d(0.5, 1, 1);
-            -webkit-transition: -webkit-transform 0.4s, opacity 0.4s;
-            transition: transform 0.4s, opacity 0.4s;
-            -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
-            transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+            opacity: 0; 
+            @include transform( scale3d(0.5, 1, 1));
+            
+            @include  transition( transform 0.4s, opacity 0.4s); 
+            @include transition-timing-function(cubic-bezier(0.2, 1, 0.3, 1));
         }
         &:hover {
             color: #fff;
@@ -1611,8 +1636,8 @@ html{
         }
         &:hover::before {
             opacity: 1;
-            -webkit-transform: translate3d(0, 0, 0);
-            transform: scale3d(1, 1, 1);
+            // -webkit-transform: translate3d(0, 0, 0);
+            @include transform(  scale3d(1, 1, 1));
         }
        
 }
@@ -1926,13 +1951,10 @@ html{
             height: 100%;
             background: $theme;
             z-index: -1;
-            opacity: 0;
-            -webkit-transform: scale3d(0.7, 1, 1);
-            transform: scale3d(0.7, 1, 1);
-            -webkit-transition: -webkit-transform 0.4s, opacity 0.4s;
-            transition: transform 0.4s, opacity 0.4s;
-            -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
-            transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+            opacity: 0; 
+             @include transform( scale3d(0.7, 1, 1)); 
+             @include transition( transform 0.4s, opacity 0.4s); 
+             @include transition-timing-function( cubic-bezier(0.2, 1, 0.3, 1));
         }
         &:hover {
             color: #fff;
@@ -1941,8 +1963,8 @@ html{
         }
         &:hover::before {
             opacity: 1;
-            -webkit-transform: translate3d(0, 0, 0);
-            transform: scale3d(1, 1, 1);
+            // -webkit-transform: translate3d(0, 0, 0);
+             @include transform(  scale3d(1, 1, 1));
         }
 
     }
@@ -1974,7 +1996,7 @@ html{
 }
 @media ( max-width: 1199px) {
     .mainpage {
-        transition: all 1s cubic-bezier(.23, 1, .38, 1) 0s;
+        @include transition(all 1s cubic-bezier(.23, 1, .38, 1) 0s);
     }
     // .navbar-toggler {
     //     right: 0;
@@ -1982,7 +2004,7 @@ html{
     // }
     .btn-search-wap {
         position: absolute;
-        right: 45*$px;
+        right: 65*$px;
         padding: 25*$px;
         .btn-search {
             height: 30*$px;
@@ -2030,9 +2052,9 @@ html{
         overflow: auto;
         height: 0;
         background: #202122;
-        transition: height .5s cubic-bezier(.23, 1, .38, 1);
+         @include transition(height .5s cubic-bezier(.23, 1, .38, 1));
         .navbar-nav {
-            position: relative;
+            position: relative; 
         }
     }
     .collapse.in {
@@ -2159,6 +2181,7 @@ html{
     }
 }
 @media ( max-width: 640px) {
+
     .navbar-brand {
         width: 195*$px;
     }

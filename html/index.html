@@ -6,14 +6,16 @@
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../css/index.css">
-    <link rel="stylesheet" href="../css/animate.css">
-     <!--  [if  ie 8]> -->
-    <!-- <link rel="stylesheet" type="text/css" href="../css/ie.css">  -->
-   <!-- end if -->
+    <link rel="stylesheet" href="../css/animate.css"> 
+    
+     <!--[if (IE 8)|(IE 9)]>
+        <link rel="stylesheet" type="text/css" href="../css/ie8.css"> 
+      <![endif]-->
 </head>
 
 <body>
      <script type="text/javascript" src="../js/flexible.js"></script>  
+        <script src="../js/wow.js"></script>
     <!-- 侧拉加active -->
     <div class="mainpage   ">
         <div class="header">
@@ -25,6 +27,11 @@
                     <a class="navbar-brand" href="#"></a>
                     <div class="collapse navbar-collapse" id="navbarNavDropdown">
                         <ul class="navbar-nav">
+
+                            <li class="nav-item hidden-xl-up">
+                                <a class="nav-link" href="#">首页</a>
+                            </li>
+
                             <li class="nav-item active">
                                 <a class="nav-link" href="#">产品中心 <span class="sr-only">(current)</span></a>
                             </li>
@@ -42,6 +49,10 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link " href="#">服务与支持</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">视频中心</a>
+                            </li> 
+
                             <li class="nav-item">
                                 <a class="nav-link" href="#">关于我们</a>
                             </li> 
@@ -67,10 +78,10 @@
                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
             </ol>
             <div class="carousel-inner" role="listbox">
-                <div class="carousel-item active">
+                <div class="carousel-item  item active">
                     <img class="   " src="../images/slider/s1.png" alt="First slide">
                 </div>
-                <div class="carousel-item">
+                <div class="carousel-item item">
                     <img class=" " src="../images/slider/s2.png" alt="Second slide">
                 </div>
             </div>
@@ -84,7 +95,7 @@
                 <div class="  block-c ">
                     <div class="pro-list row">
                         <div class="col-sm-4">
-                            <a class="pro-list-item  wow fadeInUp " href="#" data-wow-delay=".1s">
+                            <a class="pro-list-item  wow fadeInUp " href="#" >
                                 <div class="img-wap">
                                     <img src="../images/pro/p1.png">
                                 </div>
@@ -95,7 +106,7 @@
                             </a>
                         </div>
                         <div class="col-sm-4">
-                            <a class="pro-list-item  wow fadeInUp " href="#" data-wow-delay=".1s">
+                            <a class="pro-list-item  wow fadeInUp " href="#" >
                                 <div class="img-wap">
                                     <img src="../images/pro/p1.png">
                                 </div>
@@ -106,7 +117,7 @@
                             </a>
                         </div>
                         <div class="col-sm-4">
-                            <a class="pro-list-item  wow fadeInUp " href="#" data-wow-delay=".1s">
+                            <a class="pro-list-item  wow fadeInUp " href="#" >
                                 <div class="img-wap">
                                     <img src="../images/pro/p1.png">
                                 </div>
@@ -117,7 +128,7 @@
                             </a>
                         </div>
                         <div class="col-sm-4">
-                            <a class="pro-list-item  wow fadeInUp " href="#" data-wow-delay=".1s">
+                            <a class="pro-list-item  wow fadeInUp " href="#" >
                                 <div class="img-wap">
                                     <img src="../images/pro/p1.png">
                                 </div>
@@ -128,7 +139,7 @@
                             </a>
                         </div>
                         <div class="col-sm-4">
-                            <a class="pro-list-item  wow fadeInUp " href="#" data-wow-delay=".1s">
+                            <a class="pro-list-item  wow fadeInUp " href="#" >
                                 <div class="img-wap">
                                     <img src="../images/pro/p1.png">
                                 </div>
@@ -139,7 +150,7 @@
                             </a>
                         </div>
                         <div class="col-sm-4">
-                            <a class="pro-list-item  wow fadeInUp " href="#" data-wow-delay=".1s">
+                            <a class="pro-list-item  wow fadeInUp " href="#" >
                                 <div class="img-wap">
                                     <img src="../images/pro/p1.png">
                                 </div>
@@ -361,7 +372,7 @@
                 </div> -->
                 <div class="hidden-lg-down">
                     <div class="item">
-                        <h3>产品中心</h3>
+                        <h3><a href="">产品中心</a></h3>
                         <ul>
                             <li><a href="">高拍仪</a>
                             </li>
@@ -374,7 +385,7 @@
                         </ul>
                     </div>
                     <div class="item">
-                        <h3>最新资讯</h3>
+                        <h3><a href="">最新资讯</a></h3>
                         <ul>
                             <li><a href="">行业资讯</a>
                             </li>
@@ -383,7 +394,7 @@
                         </ul>
                     </div>
                     <div class="item">
-                        <h3>新闻中心</h3>
+                        <h3><a href="">新闻中心</a></h3>
                         <ul>
                             <li><a href=""> 行业动态</a>
                             </li>
@@ -394,13 +405,13 @@
                         </ul>
                     </div>
                     <div class="item">
-                        <h3>解决方案</h3>
+                        <h3><a href="">解决方案</a></h3>
                     </div>
                     <div class="item">
-                        <h3>服务支持</h3>
+                        <h3><a href="">服务支持</a></h3>
                     </div>
                     <div class="item">
-                        <h3>关于我们</h3>
+                        <h3><a href="">关于我们</a></h3>
                     </div>
                     <div class="contact">
                         <p class="tel">400-667-6775</p>
@@ -438,11 +449,11 @@
             </div>
         </div>
 
-        <div class="fixedright hidden-lg-down">
+        <div class="fixedright  ">
             <div class="item">
                 <span class="icon-online"></span>
                 <span class="hover-txt">
-                    在线客服
+                    在线<br>客服
                 </span>
                 <div class="drop-menu online-wap">
                     <div class="o-block">
@@ -464,7 +475,7 @@
             <div class="item">
                 <span class="icon-tel"></span>
                 <span class="hover-txt">
-                    联系方式 
+                    联系<br>方式 
                 </span>
                 <div class="drop-menu tel-wap">
                     <p> 400-667-6775</p>
@@ -473,22 +484,33 @@
             <div class="item">
                 <span class="icon-totop"></span>
                 <span class="hover-txt">
-                    回到顶上
+                    回到<br>顶上
                 </span>
             </div>
         </div>
         <script src="../js/jquery-1.11.0.min.js"></script>
-        <script src="../js/wow.js"></script>
         <script src="../js/bootstrap.js"></script>
         <script type="text/javascript">
-        $('.carousel').carousel();
-        new WOW().init();
-        $(".nav-item").hover(function(){
-            $(this).addClass("hover");
-        },function(){
-              
-        })
-        $(".this")
+        // $('.carousel').carousel();
+//       var wow = new WOW({
+//     boxClass: 'wow',
+//     animateClass: 'animated',
+//     offset: 0,
+//     mobile: true,
+//     live: true
+// });
+// wow.init();
+        if (!(/msie [6|7|8|9]/i.test(navigator.userAgent))){
+          wow = new WOW(
+          {
+            animateClass: 'animated',
+            offset:       100,
+             
+          }
+    );
+    wow.init();
+        };
+         
         </script>
 </body>
 
