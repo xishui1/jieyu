@@ -2098,6 +2098,9 @@ html{
                         margin-top: -10*$px;
                         background-size: 12*$px 20*$px;
                         border: none;
+
+                        @include transition(all .5s cubic-bezier(.23, 1, .38, 1));
+                        @include transform-origin(center center);
                     }
                 }
             }
@@ -2105,10 +2108,20 @@ html{
             &.active, &:hover {
                 .nav-link {
                     color: $theme;
+
                 }
                 &:before {
                     content: none;
                 }
+
+            }
+            &:hover,&.open{
+                .nav-link {
+                &.dropdown-toggle{
+                     &:after{
+                        @include transform(rotate(90deg));
+                     }
+                 }}
             }
             .dropdown-menu {
                 position: relative;

@@ -2272,12 +2272,26 @@ html {
     margin-top: -10px;
     background-size: 12px 20px;
     border: none;
+    -moz-transition: all 0.5s cubic-bezier(0.23, 1, 0.38, 1);
+    -o-transition: all 0.5s cubic-bezier(0.23, 1, 0.38, 1);
+    -webkit-transition: all 0.5s cubic-bezier(0.23, 1, 0.38, 1);
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.38, 1);
+    -moz-transform-origin: center center 50%;
+    -ms-transform-origin: center center 50%;
+    -webkit-transform-origin: center center 50%;
+    transform-origin: center center 50%;
   }
   .collapse.in .nav-item.active .nav-link, .collapse.in .nav-item:hover .nav-link {
     color: #406cbd;
   }
   .collapse.in .nav-item.active:before, .collapse.in .nav-item:hover:before {
     content: none;
+  }
+  .collapse.in .nav-item:hover .nav-link.dropdown-toggle:after, .collapse.in .nav-item.open .nav-link.dropdown-toggle:after {
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
   }
   .collapse.in .nav-item .dropdown-menu {
     position: relative;
