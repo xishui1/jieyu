@@ -1109,6 +1109,8 @@ html {
   margin-left: 1.48148rem;
 }
 .footer .item h3 {
+  font-size: 0.33333rem;
+  color: #fff;
   padding-bottom: 0.22222rem;
 }
 .footer .item h3 a {
