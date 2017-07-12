@@ -1270,11 +1270,7 @@ html{
         img {
             top:0;
             padding: 10*$px 0;
-            display: inline-block;
-            // margin: 0 -9999px;
-            position: absolute;
-            left:50%;
-            @include transform(translate3d(-50%,0,0));
+            display: inline-block; 
             width: 100%;
             height: auto;
             max-width: 100%;
