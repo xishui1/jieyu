@@ -459,10 +459,10 @@ html {
   max-width: none;
   position: absolute;
   left: 50%;
-  -moz-transform: translate3d(-50%, 0);
-  -ms-transform: translate3d(-50%, 0);
-  -webkit-transform: translate3d(-50%, 0);
-  transform: translate3d(-50%, 0);
+  -moz-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  -webkit-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
 }
 
 .carousel-indicators {
@@ -569,10 +569,10 @@ html {
 .pro-list-item .img-wap img {
   position: absolute;
   left: 50%;
-  -moz-transform: translate3d(-50%, 0, 0);
-  -ms-transform: translate3d(-50%, 0, 0);
-  -webkit-transform: translate3d(-50%, 0, 0);
-  transform: translate3d(-50%, 0, 0);
+  -moz-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  -webkit-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
   height: 100%;
   width: auto;
   display: inline-block;
@@ -654,10 +654,10 @@ html {
 }
 .btn-bar .btn-more:hover::before {
   opacity: 1;
-  -moz-transform: scale3d(1, 1, 1);
-  -ms-transform: scale3d(1, 1, 1);
-  -webkit-transform: scale3d(1, 1, 1);
-  transform: scale3d(1, 1, 1);
+  -moz-transform: scale(1, 1);
+  -ms-transform: scale(1, 1);
+  -webkit-transform: scale(1, 1);
+  transform: scale(1, 1);
 }
 
 .s-list {
@@ -1394,10 +1394,10 @@ html {
   width: auto;
   position: absolute;
   left: 50%;
-  -moz-transform: translate3d(-50%, 0, 0);
-  -ms-transform: translate3d(-50%, 0, 0);
-  -webkit-transform: translate3d(-50%, 0, 0);
-  transform: translate3d(-50%, 0, 0);
+  -moz-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  -webkit-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
 }
 
 .breadcrumb {
@@ -1926,10 +1926,10 @@ html {
 }
 .btn:hover::before, .btn-white:hover::before {
   opacity: 1;
-  -moz-transform: scale3d(1, 1, 1);
-  -ms-transform: scale3d(1, 1, 1);
-  -webkit-transform: scale3d(1, 1, 1);
-  transform: scale3d(1, 1, 1);
+  -moz-transform: scale(1, 1);
+  -ms-transform: scale(1, 1);
+  -webkit-transform: scale(1, 1);
+  transform: scale(1, 1);
 }
 
 .btn {
@@ -2029,7 +2029,7 @@ html {
   border: 1px solid #406cbd;
   left: 50%;
   top: 50%;
-  transform: translate3D(-50%, -50%, 0);
+  transform: translate(-50%, -50%);
 }
 .process-wap .item .point:after {
   content: "";
@@ -2256,10 +2256,10 @@ html {
 }
 .vpagination .btn-next:hover::before, .vpagination .btn-pre:hover::before {
   opacity: 1;
-  -moz-transform: scale3d(1, 1, 1);
-  -ms-transform: scale3d(1, 1, 1);
-  -webkit-transform: scale3d(1, 1, 1);
-  transform: scale3d(1, 1, 1);
+  -moz-transform: scale(1, 1);
+  -ms-transform: scale(1, 1);
+  -webkit-transform: scale(1, 1);
+  transform: scale(1, 1);
 }
 .vpagination .btn-next {
   margin-left: 100px;
