@@ -6,7 +6,13 @@
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../css/index.css">
-    <script type="text/javascript" src="../js/flexible.js"></script>
+    <script type="text/javascript" src="../js/flexible.js"></script> 
+    <script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../js/swiper/swiper.min.css">
+    <script type="text/javascript" src="../js/swiper/swiper.min.js"></script>
+    <style type="text/css">
+        
+    </style>
 </head>
 
 <body>
@@ -76,16 +82,91 @@
     <div class="con">
         <div class="container">
 
-            <div class="h-tab"> <a href="#">服务理念</a><a href="#">企业文化</a><a href="#">服务政策</a><a href="#">下载中心</a><a href="#" class="sel">常见问题</a><a href="#">华通专区</a> 
+            <!--             <div class="h-tab"> <a href="#">服务理念</a><a href="#">企业文化</a><a href="#">服务政策</a><a href="#">下载中心</a><a href="#" class="sel">常见问题</a><a href="#">华通专区</a>  -->
+            <!--      <div class="h-tab">
+                <ul>
+                    <li> <a href="#">服务理念</a>
+                    </li>
+                    <li><a href="#">企业文化</a>
+                    </li>
+                    <li><a href="#">服务政策</a>
+                    </li>
+                    <li><a href="#">下载中心</a>
+                    </li>
+                    <li class="sel"><a href="#" class=" dropdown-toggle">常见问题<span class="caret"></span></a>
+                        <div class="dropdown-menu">
+                           <div  class="dropdown-menu-inner">
+                                <a class="dropdown-item" href="#">产品动态</a>
+                               <a class="dropdown-item" href="#">产品动态</a>
+                               <a class="dropdown-item" href="#">产品动态</a>
+                           </div>
+                        </div>
+                    </li>
+                    <li><a href="#">华通专区</a>
+                    </li>
+                </ul>
+
+            </div> -->
+            <div class=" h-tab swiper-container">
+                <ul class="swiper-wrapper">
+                    <!-- Slides -->
+
+                    <li class="swiper-slide"> <a href="#">服务理念</a>
+                    </li>
+                    <li class="swiper-slide"><a href="#">企业文化</a>
+                    </li>
+                    <li class="swiper-slide"><a href="#">服务政策</a>
+                    </li>
+                    <li class="swiper-slide"><a href="#">下载中心</a>
+                    </li >
+<!--                     <li class="swiper-slide sel"><a href="#" class=" dropdown-toggle">常见问题<span class="caret"></span></a>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-menu-inner">
+                                <a class="dropdown-item" href="#">产品动态</a>
+                                <a class="dropdown-item" href="#">产品动态</a>
+                                <a class="dropdown-item" href="#">产品动态</a>
+                            </div>
+                        </div>
+                    </li> -->
+                    <li class="swiper-slide"><a href="#">华通专区</a>
+                    </li>
+
+                </ul>
+
+                <div class="swiper-scrollbar"></div>
             </div>
             <div class="tab-con">
-                <div class="q-block">
+                <div class="q-block  ">
+                    <div class="group-block">
+                        <ul class=" row">
+                            <li class="col-sm-4">
+                                <a href="#">注册登录问题</a>
+                            </li>
+                            <li class="col-sm-4">
+                                <a href="#">注册登录问题</a>
+                            </li>
+                            <li class="col-sm-4">
+                                <a href="#">注册登录问题</a>
+                            </li>
+                            <li class="col-sm-4">
+                                <a href="#">注册登录问题</a>
+                            </li>
+                            <li class="col-sm-4">
+                                <a href="#">注册登录问题</a>
+                            </li>
+                            <li class="col-sm-4">
+                                <a href="#">注册登录问题</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="q-block ">
                     <p class="question">Q：高拍仪/视频展台的软件与驱动哪里下载如何安装？</p>
                     <p class="answer">
                         智汇星全系列产品免驱！
                         <br>所以只需安装配套软件后，连接电脑即可使用，非常方便。
                         <br>高拍仪应用软件点此下载；视频展台点此下载。
-                        <br>安装非常简单，下载下来的压缩包解压，双击“setup.exe”，根据提示一路确定即可完成安装。 
+                        <br>安装非常简单，下载下来的压缩包解压，双击“setup.exe”，根据提示一路确定即可完成安装。
                     </p>
                 </div>
                 <div class="q-block">
@@ -94,7 +175,7 @@
                         智汇星全系列产品免驱！
                         <br>所以只需安装配套软件后，连接电脑即可使用，非常方便。
                         <br>高拍仪应用软件点此下载；视频展台点此下载。
-                        <br>安装非常简单，下载下来的压缩包解压，双击“setup.exe”，根据提示一路确定即可完成安装。 
+                        <br>安装非常简单，下载下来的压缩包解压，双击“setup.exe”，根据提示一路确定即可完成安装。
                     </p>
                 </div>
             </div>
@@ -187,7 +268,30 @@
             </div>
         </div>
     </div>
-
+    <script type="text/javascript">
+  
+     var w=0;
+     $(".swiper-slide").each(function ( ) {
+         // body...
+        w+=$(this).width();
+     
+     });
+     if(w>$(".swiper-container").width())
+     var swiperNavtab = new Swiper('.swiper-container', {
+                    slidesPerView: 'auto',
+                    scrollbar:'.swiper-scrollbar',
+                    scrollbarHide:true,
+                    scrollbarDraggable:true    
+                });
+ // var swiper = new Swiper('.swiper-container', {
+ //        scrollbar: '.swiper-scrollbar',
+ //        scrollbarHide: true,
+ //        slidesPerView: 'auto',
+ //        centeredSlides: true,
+ //        spaceBetween: 30,
+ //        grabCursor: true
+ //    });
+    </script>
 </body>
 
 </html>

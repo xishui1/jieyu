@@ -176,7 +176,7 @@ html{
             color: #333;
         }
         &:hover {
-            .dropdown-menu {
+            &>.dropdown-menu {
                 display: block;
             }
         }
@@ -184,7 +184,7 @@ html{
     .dropdown-toggle:after {
         content: none;
     }
-    .dropdown-menu {
+    .nav-item>.dropdown-menu {
         position: absolute;
         top: 80*$px;
         left: 0;
@@ -197,17 +197,40 @@ html{
         z-index: 11;
         @include keep-all;
         .dropdown-item {
-            display:block;
-            padding: 0 20*$px;
-            line-height: 45*$px;
-            font-size: 15*$px;
-            &:active {
-                background: transparent;
+            position: relative;
+            min-width:140*$px;
+        }
+        .dropdown-item{
+            a{
+                display:block;
+                padding: 0 45*$px 0 25*$px ;
+                line-height: 45*$px;
+                font-size: 15*$px; 
             }
             &.active, &:hover {
-                background: $theme;
-                color: #fff;
-            }
+                background:#f5f5f5; 
+            }  
+             &:hover {
+                .dropdown-menu{
+                    display:block;
+                }
+             }
+            &.dropdown-toggle {
+                    position: relative;
+                    &:after {
+                        position: absolute;
+                        right: 20*$px;
+                        content: "";
+                        top: 50%;
+                        @extend %commonbg;
+                        width: 6*$px;
+                        height: 9*$px;
+                        margin-top: -4*$px;
+                        background-position: 0 -65*$px;
+                        border: none; 
+                    }
+           }
+         
         }
         &:before {
             content: "";
@@ -218,13 +241,22 @@ html{
             height: 5px;
             left: 0;
         }
+        .dropdown-menu{
+            display:none;
+            left:100%;
+            top:0;
+            border:none;
+            box-shadow:none;
+        }
     }
+     
 }
 @media (min-width: 1200px) {
     .container {
         width: 1200px;
         max-width: 100%;
     }
+
 }
 .btn-search-wap {
     position: absolute;
@@ -355,25 +387,29 @@ html{
     text-align: center;
 }
 .carousel-inner {
-    height: 500*$px;
+    height: 600*$px;
     overflow: hidden;
     .carousel-item {
-    height: 500*$px;
-        position: relative;
-        text-align: center;
+        height: 600*$px;
+        // position: relative;
+        // text-align: left;
+        overflow: hidden;
         img {
-            display:inline-block;
-            height: 100%;
-            min-width: 100%; 
+            height:100%;
             width:auto;
             max-width:none;
-            position: absolute;
-            left:50%;
-            @include transform(translate3d(-50%,0,0));
+            // display:inline-block;
+            // height: 100%;
+            // min-width: 100%; 
+            // width:auto;
+            // max-width:none;
+              position: absolute;
+              left:50%;
+              @include transform(translate3d(-50%,0,0));
         }
     }
-    .carousel-item.active, .carousel-item-next, .carousel-item-prev {
-        display: block;
+     .carousel-item-next, .carousel-item-prev {
+        // display: block;
     }
 }
 .carousel-indicators {
@@ -393,6 +429,49 @@ html{
             box-shadow: 1px 2px 2px 0px rgba( 0, 0, 0, .2);
         }
     }
+}
+.carousel-control {
+   &.left,&.right{ 
+        width:60*$px;
+        height:60*$px;
+        display:inline-block;
+        top:50%;
+        margin-top:-30*$px;
+        background:rgba(0,0,0,.2); 
+        @include border-radius(4*$px);
+
+    } 
+    &:hover{
+        opacity:1;
+        background:$theme;
+    }
+     &:after{
+        content:"";
+        width:13*$px;
+        height:20*$px;
+        @extend %commonbg;
+        position: absolute;
+        top:50%;
+        left:50%;
+        margin :-10*$px 0 0 -6*$px;
+     }
+     &.left
+     {
+
+        left:5%;
+        &:after{
+            background-position:0 -44*$px;
+        }
+    }
+    &.right
+     {
+        
+        right:5%;
+        &:after{
+            background-position:-18*$px -44*$px;
+        }
+    }
+  
 }
 .graybg {
     background: #f5f5f5;
@@ -564,6 +643,9 @@ html{
     }
 }
 .slist-block {
+    &.row{
+        margin:0;
+    }
     .slist-item {
         display: block;
         cursor: pointer;
@@ -888,6 +970,7 @@ html{
             @include transform(rotateY(180deg)) ;
             background: #fff;
             @include transition(all .1s cubic-bezier(.23, 1, .38, 1) 0s) ;
+
         }
         .icon-online, .icon-tel, .icon-totop {
             width: 28*$px;
@@ -969,7 +1052,7 @@ html{
     .item {
         display: inline-block;
         vertical-align: top;
-        margin-left: 80*$px;
+        padding-left: 72*$px;
         h3 {
                 font-size: 18*$px;
                 color: #fff;
@@ -1081,6 +1164,12 @@ html{
 @media (max-width: 1199px) {
     .container {
         padding: 0 20*$px;
+    }
+    .con .container{
+        margin:0 20*$px;
+        overflow: hidden;
+        padding:0;
+        width:auto;
     }
     .new-block {
         background: transparent;
@@ -1350,7 +1439,8 @@ html{
             width: 48*$px;
             height: 48*$px;
             border-radius: 2*$px;
-            background: #c2c2c2;
+          //  background: #c2c2c2;
+            background:rgba(0,0,0,.2);
             &:after{
                 content:"";
                 display:block;
@@ -1454,31 +1544,111 @@ html{
 }
 .h-tab {
     text-align: center;
-    margin-bottom: 60*$px;
-    @include keep-all();
-    overflow: auto;
-    a {
+    margin-bottom: 40*$px; 
+    padding-bottom:10*$px;
+    &.swiper-container{ 
+      overflow : visible; 
+    }
+    @include keep-all();  
+    ul{
+       
+        word-spacing: -4*$px;
+        text-align: center;
+        display:block;
+       height:46*$px; 
+    }
+    li{
+        display: inline-block;
+        position: relative;
+        width:auto;
+        z-index:2;
+        &:hover{
+            .dropdown-menu{
+                display:block;
+            }
+            .dropdown-toggle:before,.dropdown-toggle:after{
+                    content:"";
+             }
+
+        }
+        &.sel>a, &:hover>a{
+            background: $theme;
+            color: #fff;  
+        }
+        &+li{
+
+            &:before {
+                content: "";
+                position: absolute;
+                height: 16*$px;
+                width: 1px;
+                background: #ccc;
+                top: 7*$px;
+                left: -1px;
+            }
+        }
+    }
+    li>a {
         position: relative;
         font-size: 16*$px;
         line-height: 32*$px;
         color: #666;
         padding: 0 15*$px;
-        display: inline-block;
-        &.sel, &:hover {
-            background: $theme;
-            color: #fff;
-            &::before {
-                content: none;
+        display:  block;
+        z-index:9999;
+        
+        &.dropdown-toggle{
+            padding-right:10*$px;
+            
+            &:before,&:after{
+                position: absolute;
+                bottom:1px;
+                border-style:solid;
+                width:0;
+                bottom:-5*$px;
+                height:0;
+                z-index:9999;
+
+            }
+            &:before{ 
+                right:21*$px;
+                border-width:0 7*$px 7*$px;
+                border-color:transparent transparent  #e6e6e6 transparent;
+            }
+
+            &:after{
+                right:23*$px;
+                border-width:0 5*$px 6*$px;
+                border-color:transparent transparent  #fff transparent;
             }
         }
-        &+a:before {
-            content: "";
-            position: absolute;
-            height: 16*$px;
-            width: 1px;
-            background: #ccc;
-            top: 7*$px;
-            left: 0;
+         .caret{
+           margin-left:11*$px;  
+        }
+        
+    }
+    .dropdown-menu{
+         
+        position: absolute;
+        border:none;
+        padding:4*$px 0 0 0;
+        min-width:100%;
+        margin:0;
+        background:transparent;
+       .dropdown-menu-inner{
+            border:1px solid #e6e6e6;
+            padding:5*$px 0;
+            background:#fff;
+        }
+        a{
+            font-size:16*$px;
+            color:#666;
+            display:block;
+            line-height:36*$px;
+            padding:0 16*$px;
+            &:hover{
+                color:$theme;
+            }
         }
     }
 }
@@ -1496,7 +1666,8 @@ html{
         color:#010101;
         font-size:15*$px;
         &:hover,&.sel{
-           &:after{content:"";
+           &:after{
+            content:"";
             height:2*$px;
             background:$theme;
             position: absolute;
@@ -1688,6 +1859,7 @@ html{
         line-height: 26*$px;
         font-size: 16*$px;
         padding: 18*$px 20*$px;
+        word-break:break-all;
     }
 }
 .process-wap {
@@ -1970,6 +2142,36 @@ html{
         margin-left:100*$px;
     }
 }
+.group-block{
+    background:#fef4df; 
+    padding: 15*$px  0;
+    a{
+        position: relative;
+        display:block;
+        color:$theme;
+        font-size:16*$px;
+        line-height:24*$px; 
+        padding :15*$px 15*$px ;
+        margin-left:10%;
+        &.sel,&:hover{
+            text-decoration:underline;
+            &:before{
+                content:"";
+                position: absolute;
+                left:0;
+                top:50%;
+                margin-top:-3*$px;
+                border-style:solid;
+                border-width:4*$px 0 4*$px 5*$px;
+                border-color:transparent  transparent transparent $theme ;
+            }
+        }
+    }
+    li{
+        float:left;
+    }
+
+}
 @media (max-width: 1024px) {
     .s-list .col-sm-6 {
        width:100%; 
@@ -1983,7 +2185,7 @@ html{
 
     }
       .s-artice {
-        padding: 0 50*$px ;
+        padding: 0   ;
         .t-sub{
              padding: 0   0 35*$px 40*$px;
         }
@@ -2053,7 +2255,7 @@ html{
         overflow: auto;
         height: 0;
         background: #202122;
-         @include transition(height .5s cubic-bezier(.23, 1, .38, 1));
+        @include transition(height .5s cubic-bezier(.23, 1, .38, 1));
         .navbar-nav {
             position: relative; 
         }
@@ -2083,24 +2285,7 @@ html{
                 &:before {
                     content: none;
                 }
-                &.dropdown-toggle {
-                    position: relative;
-                    &:after {
-                        position: absolute;
-                        right: 55*$px;
-                        content: "";
-                        top: 50%;
-                        background: url(data:image/svg+xml;base64,PHN2ZyBpZD0i5Zu+5bGCXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEyIiBoZWlnaHQ9IjIwIiB2aWV3Qm94PSIwIDAgMTIgMjAiPjxzdHlsZT4uc3Qwe2ZpbGwtcnVsZTpldmVub2RkO2NsaXAtcnVsZTpldmVub2RkO2ZpbGw6IzkwOTM5RTt9PC9zdHlsZT48cGF0aCBjbGFzcz0ic3QwIiBkPSJNMTIgMTBsLTkuOSA5LjktMS40LTEuNEw5LjIgMTAgLjcgMS41IDIuMS4xbDguNSA4LjVMMTIgMTB6Ii8+PC9zdmc+) no-repeat;
-                        width: 12*$px;
-                        height: 20*$px;
-                        margin-top: -10*$px;
-                        background-size: 12*$px 20*$px;
-                        border: none;
-
-                        @include transition(all .5s cubic-bezier(.23, 1, .38, 1));
-                        @include transform-origin(center center);
-                    }
-                }
+                
             }
             line-height: 50*$px;
             &.active, &:hover {
@@ -2115,32 +2300,46 @@ html{
             }
             &:hover,&.open{
                 .nav-link {
-                &.dropdown-toggle{
-                     &:after{
-                        @include transform(rotate(90deg));
+                    &.dropdown-toggle{
+                         &:after{
+                            @include transform(rotate(90deg));
+                         }
                      }
-                 }}
+                 }
+                 &>.dropdown-menu{
+                        max-height:500px;
+                 }
             }
-            .dropdown-menu {
-                position: relative;
-                padding: 0;
+            .dropdown-menu,.dropdown-menu .dropdown-menu {
+                position: relative; 
+                float: none;
                 top: 0;
                 left: 0;
                 //  display: block;
                 width: 100%;
                 background: #ededed;
-                padding: 20*$px 0;
+                padding: 0;
                 box-shadow:none;
+                max-height:0;
                 .dropdown-item {
                     padding: 0;
-                    display:block;
-                    text-align: left;
-                    color: #666;
-                    padding-left: 60*$px;
-                    line-height: 60*$px;
-                    font-size: 22*$px;
+                     border-top: 1px solid #ccc;  
+                    a{
+                        display:block;
+                        text-align: left;
+                        color: #666;
+                        padding-left: 60*$px;
+                        line-height: 80*$px;
+                        font-size: 22*$px;
+                    }
                     &:hover {
-                        color: #fff;
+                         background:transparent;
+                       &>a{ 
+                         background:transparent;
+                         color: $theme; 
+
+                       } 
+                       
                         &:before {
                             content: none;
                         }
@@ -2150,10 +2349,50 @@ html{
                     content: none;
                 }
             }
+            .dropdown-menu {
+                .dropdown-item{
+                    &:hover {
+                        .dropdown-toggle{
+                             &:after{
+                                @include transform(rotate(90deg));
+                             } 
+
+                        }
+                        .dropdown-menu{
+                            max-height:500px;
+                        }
+                    }
+                }
+            }
+            .dropdown-menu .dropdown-menu{
+                .dropdown-item  {
+                    padding-left:100*$px;
+                }
+            }
         }
+        a.dropdown-toggle {
+                    position: relative;
+                    &:after {
+                        position: absolute;
+                        right: 55*$px;
+                        content: "";
+                        top: 50%;
+                        background: url(data:image/svg+xml;base64,PHN2ZyBpZD0i5Zu+5bGCXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEyIiBoZWlnaHQ9IjIwIiB2aWV3Qm94PSIwIDAgMTIgMjAiPjxzdHlsZT4uc3Qwe2ZpbGwtcnVsZTpldmVub2RkO2NsaXAtcnVsZTpldmVub2RkO2ZpbGw6IzkwOTM5RTt9PC9zdHlsZT48cGF0aCBjbGFzcz0ic3QwIiBkPSJNMTIgMTBsLTkuOSA5LjktMS40LTEuNEw5LjIgMTAgLjcgMS41IDIuMS4xbDguNSA4LjVMMTIgMTB6Ii8+PC9zdmc+) no-repeat;
+                        width: 12*$px;
+                        height: 20*$px;
+                        margin-top: -10*$px;
+                        background-size: 12*$px 20*$px;
+                        border: none; 
+                        @include transition(all .5s cubic-bezier(.23, 1, .38, 1));
+                        @include transform-origin(center center);
+                    }
+      }
     }
     .container {
         width: 100%;
+    }
+    .con .container{
+
     }
     .col-sm-4 {
         // -webkit-box-flex: 0 !important;
@@ -2174,6 +2413,15 @@ html{
                 content: none;
             }
         }
+    }
+    .d-item{
+        padding:0 0 30*$px ;
+    }
+     .q-block{ 
+        padding: 0 ;
+    }
+    .group-block{
+        margin-bottom:40*$px;
     }
    
 }
@@ -2225,6 +2473,9 @@ html{
     .footer .sm-inf{
         margin-left:20*$px; 
     }
+   .d-item{
+    padding:0 15*$px 30*$px ;
+   }
    
 }
 @media ( max-width: 576px) {
