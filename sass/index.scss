@@ -387,8 +387,8 @@ html{
     text-align: center;
 }
 .carousel-inner {
-   // height: auto;
-   // overflow: hidden;
+     height: auto;
+     overflow: hidden;
     .carousel-item {
         // height: 600*$px;
        // position: relative;
@@ -409,18 +409,18 @@ html{
     }
      
 }
-@media ( max-width: 1536px) {
-    //  .carousel-item {
-    //     height:400*$px;
-    //  }
-    // .carousel-inner  .carousel-item img{
+@media ( max-width: 1200px) {
+     .carousel-item {
+        height:400*$px;
+     }
+    .carousel-inner  .carousel-item img{
      
-    //    height:400*$px;
-    //    width:auto;
-    //     position: absolute;
-    //     left:50%;
-    //    @include transform(translate(-50%,0)); 
-    //}
+       height:400*$px;
+       width:auto;
+        position: absolute;
+        left:50%;
+       @include transform(translate(-50%,0)); 
+    }
 }
 .carousel-indicators {
     display: inline-block;

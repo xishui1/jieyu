@@ -445,6 +445,16 @@ html {
   text-align: center;
 }
 
+.carousel-inner {
+  height: auto;
+  overflow: hidden;
+}
+
+@media (max-width: 1200px) {
+  .carousel-item {
+    height: 7.40741rem;
+  }
+}
 .carousel-indicators {
   display: inline-block;
   margin-bottom: 0.27778rem;
