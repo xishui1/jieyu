@@ -415,10 +415,10 @@ html{
      }
     .carousel-inner  .carousel-item img{ 
         height:300*$px;
-        width:auto;
-        position: absolute;
-        left:50%; max-width:none;
-       @include transform(translate(-50%,0)); 
+        width:100%;
+       //  position: absolute;
+       //  left:50%; max-width:none;
+       // @include transform(translate(-50%,0)); 
     }
 }
 .carousel-indicators {

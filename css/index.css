@@ -457,14 +457,7 @@ html {
 
   .carousel-inner .carousel-item img {
     height: 5.55556rem;
-    width: auto;
-    position: absolute;
-    left: 50%;
-    max-width: none;
-    -moz-transform: translate(-50%, 0);
-    -ms-transform: translate(-50%, 0);
-    -webkit-transform: translate(-50%, 0);
-    transform: translate(-50%, 0);
+    width: 100%;
   }
 }
 .carousel-indicators {
