@@ -411,14 +411,13 @@ html{
 }
 @media ( max-width: 1200px) {
      .carousel-item {
-        height:400*$px;
+        height:300*$px;
      }
-    .carousel-inner  .carousel-item img{
-     
-       height:400*$px;
-       width:auto;
+    .carousel-inner  .carousel-item img{ 
+        height:300*$px;
+        width:auto;
         position: absolute;
-        left:50%;
+        left:50%; max-width:none;
        @include transform(translate(-50%,0)); 
     }
 }
