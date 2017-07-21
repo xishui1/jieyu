@@ -452,11 +452,11 @@ html {
 
 @media (max-width: 768px) {
   .carousel-item {
-    height: 3.7037rem;
+    height: 5.55556rem;
   }
 
   .carousel-inner .carousel-item img {
-    height: 3.7037rem;
+    height: 5.55556rem;
     width: auto;
     position: absolute;
     left: 50%;
