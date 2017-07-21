@@ -3,7 +3,7 @@ body, html, ul, li, p, input, h1, h2, h3, h4, h5 {
   margin: 0;
 }
 
-ul, li {
+ul {
   list-style: none;
 }
 
@@ -443,26 +443,6 @@ html {
 
 .carousel {
   text-align: center;
-}
-
-.carousel-inner {
-  height: 11.11111rem;
-  overflow: hidden;
-}
-.carousel-inner .carousel-item {
-  height: 11.11111rem;
-  overflow: hidden;
-}
-.carousel-inner .carousel-item img {
-  height: 100%;
-  width: auto;
-  max-width: none;
-  position: absolute;
-  left: 50%;
-  -moz-transform: translate(-50%, 0);
-  -ms-transform: translate(-50%, 0);
-  -webkit-transform: translate(-50%, 0);
-  transform: translate(-50%, 0);
 }
 
 .carousel-indicators {
@@ -1023,7 +1003,7 @@ html {
 .fixedright {
   position: fixed;
   right: 0;
-  top: 45%;
+  top: 25%;
   z-index: 999;
 }
 .fixedright .item {
@@ -1648,6 +1628,26 @@ html {
   line-height: 0.55556rem;
   padding-bottom: 0.74074rem;
 }
+.l-tab-con-wap .sect {
+  text-indent: 0.51852rem;
+  line-height: 0.55556rem;
+  font-size: 0.27778rem;
+  padding-bottom: 0.55556rem;
+}
+.l-tab-con-wap .sect p {
+  text-indent: 0.51852rem;
+  margin: 0.18519rem 0;
+}
+.l-tab-con-wap .sect p, .l-tab-con-wap .sect h1, .l-tab-con-wap .sect h2, .l-tab-con-wap .sect h3, .l-tab-con-wap .sect h4, .l-tab-con-wap .sect h5, .l-tab-con-wap .sect h6 {
+  margin: 0.37037rem 0 0.18519rem;
+  line-height: 1.5;
+}
+.l-tab-con-wap .sect img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
 .l-tab-con-wap .img-block {
   margin-bottom: 0.74074rem;
   text-align: center;
@@ -1822,9 +1822,10 @@ html {
   line-height: 0.44444rem;
   font-size: 0.27778rem;
   padding: 0 2.59259rem 0.64815rem;
+  text-align: right;
 }
 .s-artice .t-sub span {
-  margin-right: 0.74074rem;
+  margin-left: 0.74074rem;
 }
 .s-artice .t-sub .icon-view {
   width: 0.38889rem;
@@ -1846,6 +1847,17 @@ html {
   line-height: 0.55556rem;
   font-size: 0.27778rem;
   padding-bottom: 0.55556rem;
+}
+.s-artice .sect p, .s-artice .sect h1, .s-artice .sect h2, .s-artice .sect h3, .s-artice .sect h4, .s-artice .sect h5, .s-artice .sect h6 {
+  text-indent: 0.51852rem;
+  margin-top: 0.18519rem;
+  line-height: 1.5;
+}
+.s-artice .sect img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
 }
 
 .d-item {
@@ -2153,10 +2165,21 @@ html {
 .job-inf .job-item dd ul p:last-child {
   padding-bottom: 0.09259rem;
 }
-.job-inf .job-item dd ul, .job-inf .job-item dd li {
+.job-inf .job-item dd ul, .job-inf .job-item dd ul > li {
   list-style: disc outside none;
   color: #666;
   line-height: 0.44444rem;
+}
+.job-inf .job-item dd ol {
+  list-style: decimal outside none;
+  padding-bottom: 0.09259rem;
+  line-height: 0.51852rem;
+  margin-left: 0.18519rem;
+  font-weight: normal;
+}
+.job-inf .job-item dd ol, .job-inf .job-item dd ol > li {
+  padding-left: 0;
+  font-size: 0.27778rem;
 }
 
 .partner-wap h2 {
